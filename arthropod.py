@@ -64,7 +64,7 @@ class Arachnid(Arthropod):
         self.pest = pest
     @property
     def is_pest(self):
-        '''Method to determine whether arachinid is pest or not'''
+        '''Method to determine whether arachnid is pest or not'''
         if self.genus == 'spider':
             return False
         elif self.genus == 'tick':
@@ -76,7 +76,7 @@ class Arachnid(Arthropod):
         return False
 
     def __can_see_360(self):
-        '''Private method to determine whether arachinid sees 360 deg
+        '''Private method to determine whether arachnid sees 360 deg
         Implementing polymorphism and encapsulation'''
         if self.genus == 'spider':
             no_of_eyes = 8
@@ -95,8 +95,9 @@ class Arachnid(Arthropod):
 
 
 butterfly = Arachnid('Ant', 'Red speckled', False, 'fly', True)
+grasshopper = Insect('Grasshopper', 'green grasshopper', False, 'crawl', True)
 
-print(butterfly.scientific_name())
+print(grasshopper.scientific_name())
 print(butterfly.is_pest)
 
     

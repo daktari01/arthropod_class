@@ -1,5 +1,6 @@
 class Arthropod:
     """Arthropod class to demonstrate OOP concepts"""
+    no_of_eyes = 2
 
     def __init__(self, genus, species, poisonus = True, locomotion = 'crawl'):
         self.genus = genus
@@ -9,7 +10,7 @@ class Arthropod:
              
     def scientific_name(self):
         """Find the scientific name of the arthropod"""
-        return '{} {}'.format(self.genus, self.species)
+        return '{}-{}'.format(self.genus, self.species)
         
     def locomotion_type(self):
         """Method to define how athropods move"""
@@ -41,8 +42,7 @@ class Insect(Arthropod):
             return False
         elif self.genus == 'bee':
             return False
-        else:
-            return False
+        return False
 
     def live_in_group(self):
         '''Method to determine whether insect lives in group or not'''
@@ -54,7 +54,7 @@ class Insect(Arthropod):
             return False
         elif self.genus == 'bee':
             return True
-        #return False
+        return False
 
 class Arachnid(Arthropod):
     """Class Arachnid extends Arthropod"""
@@ -62,7 +62,7 @@ class Arachnid(Arthropod):
         ''''Redefine __init__ to include pest'''
         super().__init__(genus, species, poisonus = True, locomotion = 'crawl')
         self.pest = pest
-
+    @property
     def is_pest(self):
         '''Method to determine whether arachinid is pest or not'''
         if self.genus == 'spider':
@@ -73,21 +73,30 @@ class Arachnid(Arthropod):
             return False
         elif self.genus == 'mite':
             return True
-        #return False
+        return False
+
+    def __can_see_360(self):
+        '''Private method to determine whether arachinid sees 360 deg
+        Implementing polymorphism and encapsulation'''
+        if self.genus == 'spider':
+            no_of_eyes = 8
+        elif self.genus == 'tick':
+            no_of_eyes = 2
+        elif self.genus == 'scorpion':
+            no_of_eyes = 2
+        elif self.genus == 'mite':
+            no_of_eyes = 4
+        else:
+            no_of_eyes = 2
+        if no_of_eyes > 2:
+            return "Can see 360 degrees"
+        else:
+            return "Only sees one direction"
+
 
 butterfly = Arachnid('Ant', 'Red speckled', False, 'fly', True)
 
-#print(butterfly.scientific_name())
-print(butterfly.is_pest())
-    
-
-            
-            
-        
-        
-            
-            
-            
-        
+print(butterfly.scientific_name())
+print(butterfly.is_pest)
 
     

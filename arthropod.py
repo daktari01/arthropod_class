@@ -92,6 +92,25 @@ class Arachnid(Arthropod):
             return "Can see 360 degrees"
         else:
             return "Only sees one direction"
+        
+    '''def __num_of_eyes(self):
+        ''Private method to give the number of eyes of arachnid''
+        if self.genus == 'spider':
+            no_of_eyes = 8
+        elif self.genus == 'tick':
+            no_of_eyes = 2
+        elif self.genus == 'scorpion':
+            no_of_eyes = 2
+        elif self.genus == 'mite':
+            no_of_eyes = 4
+        else:
+            no_of_eyes = 2
+        
+    def can_see_360(self):
+        ''Punlic method to access the private method and return whether arachnid sees 360 deg or not''
+        no_of_eyes = __num_of_eyes(self.genus)
+
+    '''
 
 
 butterfly = Arachnid('Ant', 'Red speckled', False, 'fly', True)
